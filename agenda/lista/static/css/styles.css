@@ -1,0 +1,91 @@
+body{
+    background: linear-gradient(90deg,  #e4dbdb, #ceb6b6a6, #000000 );
+     background-size: 150% 250%;
+     animation: colors 20s ease infinite;
+   
+   }
+   
+   @keyframes colors {
+     0% {
+       background-position: 0% 50%;
+     }
+     50% {
+       background-position: 100% 50%;
+     }
+     100% {
+       background-position: 0% 50%;
+     }
+   }
+/* Botão de editar */
+.button{
+    color: rgb(8, 8, 8);
+    background-color: #edf5f0;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+/* Títulos */
+h2{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Tabela */
+#contacts-table thead{
+    color: rgb(245, 237, 237);
+    background-color: rgba(11, 11, 14, 0.452);
+    
+}
+#tabela{
+  margin-top: 50px;
+  background : rgba(13, 14, 14, 0.192);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);}
+#contacts-table tbody{
+    color: rgb(245, 237, 237);
+    background-color: rgba(11, 11, 14, 0.452);
+}
+
+/* Formulário */
+.for{
+  border-radius: 30px;
+  
+}
+
+.texar{
+  border-radius: 30px;
+  padding-bottom: 50px;
+
+}
+
+@media screen and (max-width: 500px) {
+   
+  #contacts-table thead{
+      display: none;
+    }
+    #contacts-table td {
+     display: flex;
+     justify-content: space-between;
+ }
+ #contacts-table tr {
+     display: block;
+     margin-bottom: 10px;
+ }
+ #contacts-table td:first-of-type{
+     font-weight: bold;
+     font-size: 1.2rem;
+     text-align: center;
+     display: block;
+ }
+ #contacts-table td:not(:first-of-type):before{
+     content: attr(data-title);
+     display: block;
+ }
+ #contacts-table{
+     margin: 50px 0;
+    
+ }
+ 
+}
+
+

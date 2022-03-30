@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Lista de Clientes {% endblock %}
+
+{% block content %} 
+<div class="container col-sm-7">
+    <h2>Lista de Contatos</h2>
+
+<table class="table" id="contacts-table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th colspan="2">Sobrenome</th>
+        </tr>
+    </thead>
+
+        {% for user in usuarios %}
+       
+            <tbody>
+        <tr>
+            <td data-title="#:"scope="row">{{user.id}}</td>
+            <td data-title="Nome:" scope="row">{{user.nome}}</td>
+            <td data-title="Sobrenome:" scope="row">{{user.sobrenome}}</td>
+            <td class="actions">
+                <a href="edit/{{user.id}}"> <i class="far fa-edit edit-icon" style='color:rgb(28, 236, 28)'></i></a>
+                <a href="delete/{{user.id}}" class="delete-btn"onclick="return confirm('Deseja excluir o contato de: {{user.nome}}?')" style='color:red'><span><i class="fas fa-trash"></i></span></a></td>
+        </tr>
+
+    </tbody>
+    {% endfor %}
+
+</table>
+<a href="create"><button type="button" class="btn btn-dark">Cadastrar cliente</button></a><br>
+
+</div>
+
+{% endblock %}

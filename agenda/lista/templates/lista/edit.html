@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %} 
+
+{% block title %} Editar contato {% endblock %}
+
+{% block content %} 
+<a href=".."><button class="btn btn-success">Voltar</button></a>
+
+<div class="container col-sm-5">
+    <h2>Editar Contato</h2>
+
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form|crispy }}
+
+    <input type="submit" class="button col-sm-12" value="Editar">
+
+</form>
+</div>
+{% endblock %}
